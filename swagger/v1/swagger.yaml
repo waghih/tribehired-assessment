@@ -1,0 +1,38 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/comments/search":
+    get:
+      summary: Search comments
+      tags:
+      - Comment
+      parameters:
+      - name: name
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: email
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: body
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Return search result
+  "/api/posts/top":
+    get:
+      summary: Top posts with total number of comments
+      tags:
+      - Post
+      responses:
+        '200':
+          description: list of Top Posts ordered by their number of Comments
